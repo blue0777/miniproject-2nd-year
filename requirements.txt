@@ -1,8 +1,10 @@
 asyncio
-pyrogram
-sqlite3 
+pyrogram 
 openai 
-TgCrypto 
+TgCrypto
+
+ 
+ 
 
 
 
