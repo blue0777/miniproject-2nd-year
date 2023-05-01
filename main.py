@@ -81,8 +81,12 @@ async def main(bot, msg):
 
 
 async def main_loop():
+
     await Soham.start()
-    await Soham.idle()
+
+    await Soham.run_until_disconnected()
+
+
 
 
 if __name__ == '__main__':
