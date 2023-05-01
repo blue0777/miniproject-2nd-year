@@ -3,6 +3,7 @@ import os
 import openai
 from pyrogram import filters, Client
 import sqlite3
+from Setup import guu
 
 
 # Set up SQLite database
@@ -15,13 +16,12 @@ c.execute('''CREATE TABLE IF NOT EXISTS Feedback
               feedback TEXT)''')
 conn.commit()
 
-
-Soham = Client(name="OpenaiBot", api_id=os.environ.get("API_ID"), api_hash=os.environ.get("API_HASH"))
+Soham = Client(name="OpenaiBot",api_id=guu.api_id,api_hash=guu.api_hash)
 
 
 async def ai(query):
-    openai.api_key = os.environ.get("OPENAI_API_KEY")
-    completion = openai.Completion.create(engine=os.environ.get("MODEL"), prompt=query, max_tokens=int(os.environ.get("MAX_TOKENS")), n=1, stop=None,temperature=0.7)
+    openai.api_key = guu.openai_api_key
+    completion = openai.Completion.create(engine=guu.model, prompt=query, max_tokens=guu.mxtoken, n=1, stop=None,temperature=0.7)
     result = completion.choices[0].text
     return result
 
