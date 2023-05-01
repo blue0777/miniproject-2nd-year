@@ -86,8 +86,17 @@ async def main(bot, msg):
     test = f"`{guu}`"
     await asyncio.sleep(1)
     await bot.send_message(newbie,test)
+    
+if __name__ == '__main__':
+
+    asyncio.run(main())
+
 
 while True:
   Soham.run()
+  
+
+
+
   
 
