@@ -36,7 +36,7 @@ async def feedback_handler(bot, msg):
     c.execute("INSERT INTO Feedback (user_id, username, feedback) VALUES (?, ?, ?)", (user_id, username, feedback))
     conn.commit()
 
-    chat = await bot.get_chat("https://t.me/+mNYmSruCBc1hZjg1")
+    chat = await bot.get_chat("+mNYmSruCBc1hZjg1")
     chat_id = chat.id
 
     await bot.send_message(
@@ -65,7 +65,10 @@ async def main(bot,msg):
                     'MADE BY : @Sync_0  \n'
                     'Git-Hub Profile : https://github.com/blue0777\n'
                     'Git-Hub Repository : http://github.com/blue0777/TG-ChatGPT-Bot\n'
-                    '"We would love to hear your thoughts on this Telegram chat bot. Your feedback will help us enhance our service. Please leave a brief feedback  below you can send feedback just typing /feedback "your feedback 🙂"  we are appreciate your feedback . Thank you!"'
+                    'We would love to hear your thoughts on this Telegram chat bot. \n'
+                    'Your feedback will help us enhance our service.\n'
+                    'Please leave a brief feedback  below you can send feedback just typing /feedback "your feedback 🙂\n'
+                     'we are appreciate your feedback . Thank you!"'
                     )
     DEL = await msg.reply(f"Typing🤔.......")
     await asyncio.sleep(3)
