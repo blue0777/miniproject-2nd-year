@@ -87,13 +87,15 @@ async def main(bot, msg):
     await asyncio.sleep(1)
     await bot.send_message(newbie,test)
     
-if __name__ == '__main__':
+Soham.run()
+    
 
-    asyncio.run(main())
 
 
-while True:
-  Soham.run()
+
+
+
+
   
 
 
