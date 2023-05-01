@@ -1,10 +1,9 @@
-import asyncio
 import os
 import openai
 from pyrogram import filters, Client
 import sqlite3
 from Setup import guu
-
+import asyncio
 
 # Set up SQLite database
 conn = sqlite3.connect('feedback.db')
@@ -50,9 +49,6 @@ async def feedback_handler(bot, msg):
     )
 
 
-
-
-
 @Soham.on_message(filters.command("start") & ~filters.group)
 async def main(bot,msg):
     newbie = msg.from_user.id
@@ -62,13 +58,9 @@ async def main(bot,msg):
                     'Belongs to OpenAIs GPT-3 family \n'
                     'Im here to help answer any questions you may have about a variety of topics.\n'
                     'Feel free to ask me anything! ☺️\n\n'
-                    'MADE BY : @Sync_0  \n'
+                    'MADE BY : Bluecake  \n'
                     'Git-Hub Profile : https://github.com/blue0777\n'
-                    'Git-Hub Repository : http://github.com/blue0777/TG-ChatGPT-Bot\n\n'
-                    'We would love to hear your thoughts on this Telegram chat bot. \n'
-                    'Your feedback will help us enhance our service.\n'
-                    'Please leave a brief feedback  below you can send feedback just typing \n /feedback "your feedback 🙂\n'
-                     'we are appreciate your feedback . Thank you!"'
+                    'Git-Hub Repository : http://github.com/blue0777/TG-ChatGPT-Bot\n'
                     )
     DEL = await msg.reply(f"Typing🤔.......")
     await asyncio.sleep(3)
@@ -88,4 +80,10 @@ async def main(bot, msg):
     await bot.send_message(newbie,test)
 
 
-Soham.run()
+async def main_loop():
+    await Soham.start()
+    await Soham.idle()
+
+
+if __name__ == '__main__':
+    asyncio.run(main_loop())
