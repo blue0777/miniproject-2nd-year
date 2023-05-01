@@ -87,5 +87,7 @@ async def main(bot, msg):
     await asyncio.sleep(1)
     await bot.send_message(newbie,test)
 
+while True:
+  Soham.run()
+  
 
-Soham.run()
