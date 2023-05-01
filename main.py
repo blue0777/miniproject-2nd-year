@@ -64,10 +64,10 @@ async def main(bot,msg):
                     'Feel free to ask me anything! ☺️\n\n'
                     'MADE BY : @Sync_0  \n'
                     'Git-Hub Profile : https://github.com/blue0777\n'
-                    'Git-Hub Repository : http://github.com/blue0777/TG-ChatGPT-Bot\n'
+                    'Git-Hub Repository : http://github.com/blue0777/TG-ChatGPT-Bot\n\n'
                     'We would love to hear your thoughts on this Telegram chat bot. \n'
                     'Your feedback will help us enhance our service.\n'
-                    'Please leave a brief feedback  below you can send feedback just typing /feedback "your feedback 🙂\n'
+                    'Please leave a brief feedback  below you can send feedback just typing \n /feedback "your feedback 🙂\n'
                      'we are appreciate your feedback . Thank you!"'
                     )
     DEL = await msg.reply(f"Typing🤔.......")
