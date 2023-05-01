@@ -1,6 +1,6 @@
 asyncio
 pyrogram
-textblob
+sqlite3 
 openai
-pymongo
+
 TgCrypto
