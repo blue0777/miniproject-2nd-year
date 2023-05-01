@@ -36,7 +36,7 @@ async def feedback_handler(bot, msg):
     c.execute("INSERT INTO Feedback (user_id, username, feedback) VALUES (?, ?, ?)", (user_id, username, feedback))
     conn.commit()
 
-    chat = await bot.get_chat("cosmic98")
+    chat = await bot.get_chat("https://t.me/+mNYmSruCBc1hZjg1")
     chat_id = chat.id
 
     await bot.send_message(
@@ -62,7 +62,7 @@ async def main(bot,msg):
                     'Belongs to OpenAIs GPT-3 family \n'
                     'Im here to help answer any questions you may have about a variety of topics.\n'
                     'Feel free to ask me anything! ☺️\n\n'
-                    'MADE BY : Bluecake  \n'
+                    'MADE BY : @Sync_0  \n'
                     'Git-Hub Profile : https://github.com/blue0777\n'
                     'Git-Hub Repository : http://github.com/blue0777/TG-ChatGPT-Bot\n'
                     )
