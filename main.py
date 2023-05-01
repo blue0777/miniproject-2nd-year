@@ -65,6 +65,7 @@ async def main(bot,msg):
                     'MADE BY : @Sync_0  \n'
                     'Git-Hub Profile : https://github.com/blue0777\n'
                     'Git-Hub Repository : http://github.com/blue0777/TG-ChatGPT-Bot\n'
+                    '"We would love to hear your thoughts on this Telegram chat bot. Your feedback will help us enhance our service. Please leave a brief feedback  below you can send feedback just typing /feedback "your feedback 🙂"  we are appreciate your feedback . Thank you!"'
                     )
     DEL = await msg.reply(f"Typing🤔.......")
     await asyncio.sleep(3)
