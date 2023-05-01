@@ -36,7 +36,7 @@ async def feedback_handler(bot, msg):
     c.execute("INSERT INTO Feedback (user_id, username, feedback) VALUES (?, ?, ?)", (user_id, username, feedback))
     conn.commit()
 
-    chat = await bot.get_chat("+mNYmSruCBc1hZjg1")
+    chat = await bot.get_chat("cosmic98")
     chat_id = chat.id
 
     await bot.send_message(
