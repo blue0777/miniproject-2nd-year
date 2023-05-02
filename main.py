@@ -6,7 +6,7 @@ import sqlite3
 from Setup import guu
 
 
-# Set up SQLite database
+
 conn = sqlite3.connect('feedback.db')
 c = conn.cursor()
 c.execute('''CREATE TABLE IF NOT EXISTS Feedback
@@ -16,7 +16,11 @@ c.execute('''CREATE TABLE IF NOT EXISTS Feedback
               feedback TEXT)''')
 conn.commit()
 
-Soham = Client(name="OpenaiBot",api_id=guu.api_id,api_hash=guu.api_hash)
+Soham = Client(
+    name="OpenaiBot",api_id=guu.api_id,
+    api_hash=guu.api_hash,
+    bot_token=guu.bot_token
+)
 
 
 async def ai(query):
