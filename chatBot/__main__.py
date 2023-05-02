@@ -31,27 +31,51 @@ async def ai(query):
 
 
 @Soham.on_message(filters.command("feedback") & ~filters.group)
+
 async def feedback_handler(bot, msg):
+
     feedback = msg.text.replace("/feedback ", "")
 
+    if not feedback.strip(): 
+
+        await bot.send_message(
+
+            chat_id=msg.chat.id,
+
+            text="Please provide some feedback to submit."
+
+        )
+
+        return
+
     user_id = msg.from_user.id
+
     username = msg.from_user.username
 
     c.execute("INSERT INTO Feedback (user_id, username, feedback) VALUES (?, ?, ?)", (user_id, username, feedback))
+
     conn.commit()
 
     chat = await bot.get_chat("cosmic98")
+
     chat_id = chat.id
 
     await bot.send_message(
+
         chat_id=chat_id,
+
         text=f"New feedback from @{username} (user ID: {user_id}):\n{feedback}"
+
     )
 
     await bot.send_message(
+
         chat_id=user_id,
+
         text="Thank you for your feedback! We appreciate your response 🙂."
+
     )
+
 
 
 
