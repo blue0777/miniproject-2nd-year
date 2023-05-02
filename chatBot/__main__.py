@@ -1,9 +1,15 @@
 import asyncio
 import os
 import openai
-from pyrogram import filters, Client
+from pyrogram import filters, idle
 import sqlite3
-from Setup import guu
+#-------------------------------------#
+from rich.console import Console
+from rich.table import Table
+from rich.panel import Panel
+from rich.box import SIMPLE_HEAVY
+#-------------------------------------#
+from . import Soham
 
 
 
@@ -15,13 +21,6 @@ c.execute('''CREATE TABLE IF NOT EXISTS Feedback
               username TEXT,
               feedback TEXT)''')
 conn.commit()
-
-Soham = Client(
-    name="OpenaiBot",api_id=guu.api_id,
-    api_hash=guu.api_hash,
-    bot_token=guu.bot_token
-)
-
 
 async def ai(query):
     openai.api_key = guu.openai_api_key
@@ -92,4 +91,42 @@ async def main(bot, msg):
     await bot.send_message(newbie,test)
 
 
-Soham.run()
+if __name__ == "__main__":
+  #-------------------------------------------------------------------#
+    Soham.start()
+
+    # Create a console object
+    console = Console()
+
+    # Add some space at the top
+    console.print("\n" * 2)
+
+    # Print a bordered title for the bot start message
+    console.print(Panel("Bot Started", title="[bold blue]BOT", border_style="bold blue", padding=(1, 2)))
+
+    # Add some space between the sections
+    console.print("\n" * 2)
+
+    console.print(Panel(f"{Soham.get_me().username}", title="[bold blue_violet]USERNAME", border_style="bold blue_violet", padding=(1, 2)))
+
+    # Add some space between the sections
+    console.print("\n" * 2)
+
+    table = Table(title="MODULES: ", show_header=False, box=SIMPLE_HEAVY)
+    table.add_row("1 : ChatBot Module")
+    table.add_row("2 : OpenAiApi Module")
+
+    # Print a bordered title for the working modules message
+    console.print(Panel(table, title="[bold green]STATUS", border_style="bold green", padding=(1, 2)))
+
+    # Add some space between the sections
+    console.print("\n" * 2)
+
+    # Print a list of working modules
+
+    # console.print("4 : Storage Module")
+    console.print("\n" * 2)
+    # Add a box around the normal print statements
+    console.rule("Other Logs", style="bold magenta")
+    console.print("\n" * 2)
+    idle()

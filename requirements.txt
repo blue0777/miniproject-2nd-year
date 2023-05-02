@@ -2,3 +2,4 @@ openai
 pyrogram
 TgCrypto
 asyncio
+rich
