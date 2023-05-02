@@ -12,6 +12,7 @@ from rich.box import SIMPLE_HEAVY
 from . import Soham
 from setup import guu
 
+guu = setup.guu
 
 
 conn = sqlite3.connect('feedback.db')
