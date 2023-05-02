@@ -10,6 +10,7 @@ from rich.panel import Panel
 from rich.box import SIMPLE_HEAVY
 #-------------------------------------#
 from . import Soham
+from setup import guu
 
 
 
