@@ -96,38 +96,38 @@ if __name__ == "__main__":
   #-------------------------------------------------------------------#
     Soham.start()
 
-    # Create a console object
+
     console = Console()
 
-    # Add some space at the top
+
     console.print("\n" * 2)
 
-    # Print a bordered title for the bot start message
+
     console.print(Panel("Bot Started", title="[bold blue]BOT", border_style="bold blue", padding=(1, 2)))
 
-    # Add some space between the sections
+
     console.print("\n" * 2)
 
     console.print(Panel(f"{Soham.get_me().username}", title="[bold blue_violet]USERNAME", border_style="bold blue_violet", padding=(1, 2)))
 
-    # Add some space between the sections
+
     console.print("\n" * 2)
 
     table = Table(title="MODULES: ", show_header=False, box=SIMPLE_HEAVY)
     table.add_row("1 : ChatBot Module")
     table.add_row("2 : OpenAiApi Module")
 
-    # Print a bordered title for the working modules message
+
     console.print(Panel(table, title="[bold green]STATUS", border_style="bold green", padding=(1, 2)))
 
-    # Add some space between the sections
+
     console.print("\n" * 2)
 
-    # Print a list of working modules
 
-    # console.print("4 : Storage Module")
+
+
     console.print("\n" * 2)
-    # Add a box around the normal print statements
+
     console.rule("Other Logs", style="bold magenta")
     console.print("\n" * 2)
     idle()
