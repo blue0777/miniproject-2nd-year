@@ -68,7 +68,7 @@ async def main(bot,msg):
                     'We would love to hear your thoughts on this Telegram chat bot. \n'
                     'Your feedback will help us enhance our service.\n'
                     'Please leave a brief feedback  below you can send feedback just typing \n /feedback "your feedback 🙂\n'
-                     'we are appreciate your feedback . Thank you!"'
+                    'we are appreciate your feedback . Thank you!"'
                     )
     DEL = await msg.reply(f"Typing🤔.......")
     await asyncio.sleep(3)
@@ -86,19 +86,6 @@ async def main(bot, msg):
     test = f"`{guu}`"
     await asyncio.sleep(1)
     await bot.send_message(newbie,test)
-    
+
+
 Soham.run()
-    
-
-
-
-
-
-
-
-  
-
-
-
-  
-
